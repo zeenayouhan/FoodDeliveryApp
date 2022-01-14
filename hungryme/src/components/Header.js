@@ -4,13 +4,13 @@ import {icon} from 'react-native-elements';
 import { Icon } from "react-native-elements/dist/icons/Icon";
 import{colors, parameters} from '../global/styles'
 
-const Header = (props) =>{
+export default function Header({title, type}){
     return(
     <View style = {styles.header}>
         <View style={{marginLeft:20 ,marginTop:50}}>
             <Icon
             type="material-community"
-            name = "arrow-left"
+            name = {type}
             color={colors.headerText}
             size={28}
             onPress={()=>{}}
@@ -19,7 +19,7 @@ const Header = (props) =>{
         </View>
         
         <View style={{marginLeft:20 ,marginTop:50}}>
-                <Text style={styles.headerText}>{props.title}</Text>
+                <Text style={styles.headerText}>{title}</Text>
         </View>
         
     </View>);
@@ -45,4 +45,3 @@ const styles = StyleSheet.create(
     }
 )
 
-export default Header;

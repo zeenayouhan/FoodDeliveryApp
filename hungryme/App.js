@@ -1,7 +1,8 @@
 import React from "react";
 import {View, Text, StyleSheet, StatusBar}  from 'react-native';
-import Header from "./src/components/Header";
+
 import { colors } from "./src/global/styles";
+import SignInScreen from "./src/screens/authScreens/signInScreen";
 
 
 export default function App(){
@@ -11,12 +12,13 @@ export default function App(){
       barStyle="light-content"
       backgroundColor= {colors.statusbar}
       />
-    <Header title="MY ACCOUNT"/>
+      <SignInScreen/>
+    
     </View>
   )
 
 }
 
 const styles = StyleSheet.create({
-  container: {flex: '1'}
+  container: {flex: 1}
 })
