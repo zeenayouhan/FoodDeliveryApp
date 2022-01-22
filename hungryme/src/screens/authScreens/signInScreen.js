@@ -6,7 +6,7 @@ import { Icon } from "react-native-elements/dist/icons/Icon";
 import{colors, parameters} from '../../global/styles';
 import { titleText } from "../../global/styles";
 import * as Animatable from "react-native-animatable";
-import { Button } from "react-native-elements/dist/buttons/Button";
+import { Button , SocialIcon} from "react-native-elements";
 
 export default function SignInScreen(){
 
@@ -63,13 +63,47 @@ export default function SignInScreen(){
                 </Animatable.View>
                 </View>
             </View>
-            <View style={{marginHorizontal:20, marginVertical:30}}>
+            <View style={{marginHorizontal:20, marginTop:30}}>
                 <Button
                 title="SIGN IN"
                 buttonStyle = {parameters.styledButton}
                 titleStyle = {parameters.buttonTitle}
                 />
 
+            </View>
+            <View style={{alignItems:"center", marginTop: 20}}>
+                <Text style={{...styles.text1, textDecorationLine:"underline"}} >Forgot Password ?</Text>
+            </View>
+            <View style={{alignItems:'center',marginTop:20, marginBottom:20}}>
+                <Text style={{fontSize:20, fontWeight:"bold"}}>OR</Text>
+            </View>
+            <View style={{marginHorizontal:10, marginTop:10}}>
+                <SocialIcon
+                title="Sign In With Facebook"
+                button
+                type="facebook"
+                style="styles.socialIcon"
+                onPress={()=>{}}
+                />
+            </View>
+            <View style={{marginHorizontal:10, marginTop:10}}>
+                <SocialIcon
+                title="Sign In With Google"
+                button
+                type="google"
+                style="styles.socialIcon"
+                onPress={()=>{}}
+                />
+            </View>
+            <View style={{marginLeft:20, marginTop: 25}}>
+                <Text style={{...styles.text1, textDecorationLine:"underline"}} >New on XpressFood ?</Text>
+            </View>
+            <View style={{alignItems:'flex-end',marginHorizontal:20, marginTop:20}}>
+                <Button 
+                title="Create an account"
+                buttonStyle = {styles.createButton}
+                titleStyle = {styles.createButtonTitle}
+                />
             </View>
 
         </View>
@@ -111,5 +145,29 @@ const styles = StyleSheet.create({
         color:"#ff8c52",
         fontSize :20,
         fontWeight:"bold"
+    },
+    socialIcon:{
+        borderRadius:12, 
+        height: 50
+    },
+    createButton:{
+        backgroundColor:"white",
+        alignContent:"center",
+        justifyContent:"center",
+        borderRadius:12,
+        borderWidth:1,
+        borderColor:"#ff8c52",
+        height:40,
+        paddingHorizontal:20
+
+    },
+    createButtonTitle:{
+        fontSize:16,
+        color:"#ff8c52",
+        fontWeight:"bold",
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:-3
+
     }
 })
